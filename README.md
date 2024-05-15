@@ -12,7 +12,7 @@ If you don't have the required computing power to run the models locally, you ca
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/speech-to-speech-translation.git
+    git clone https://github.com/rakeshutekar/Speech-To-Speech-Translation-real-time-.git
     cd speech-to-speech-translation
     ```
 
@@ -37,7 +37,7 @@ If you don't have the required computing power to run the models locally, you ca
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/speech-to-speech-translation.git
+    git clone https://github.com/rakeshutekar/Speech-To-Speech-Translation-real-time-.git
     cd speech-to-speech-translation
     ```
 
