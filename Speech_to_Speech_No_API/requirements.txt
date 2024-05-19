@@ -1,0 +1,7 @@
+librosa
+numpy
+pyaudio
+pygame
+soundfile
+torch
+transformers
