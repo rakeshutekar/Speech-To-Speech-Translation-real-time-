@@ -68,7 +68,7 @@ We welcome contributions from the open-source community to enhance the speech-to
 
 ## Demo
 
-Check out the demo of the Speech-to-Speech Translator in real-time [link_to_demo_video](https://www.linkedin.com/posts/rakesh-utekar_speechtospeech-languagetranslation-innovation-activity-7187223474560491520-eUk4?utm_source=share&utm_medium=member_desktop).
+Check out the demo of the Speech-to-Speech Translator in real-time [link_to_demo_video](https://www.youtube.com/watch?v=dGcVsK-LN8A&feature=youtu.be).
 
 ## Framework
 ![STS api](https://github.com/rakeshutekar/Speech-To-Speech-Translation-real-time-/assets/48244158/0b8f75c1-170f-4758-84af-89b1eb9d6d02)
