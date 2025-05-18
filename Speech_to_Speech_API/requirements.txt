@@ -4,5 +4,5 @@ pyaudio
 pygame
 soundfile
 python-dotenv
-torch
+torch==2.5.*
 TTS

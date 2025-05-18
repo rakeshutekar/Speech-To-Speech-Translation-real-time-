@@ -22,6 +22,7 @@ If you don't have the required computing power to run the models locally, you ca
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
+    The dependencies pin `torch==2.5.*` to avoid XTTS load errors with PyTorch 2.6+.
 
 3. Create a `.env` file in the root directory and add your OpenAI API key:
     ```
@@ -50,6 +51,7 @@ If you don't have the required computing power to run the models locally, you ca
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
+    The dependencies pin `torch==2.5.*` to avoid XTTS load errors with PyTorch 2.6+.
 
 3. Run the project:
     ```sh
