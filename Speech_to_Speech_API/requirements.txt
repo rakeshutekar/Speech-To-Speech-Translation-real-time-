@@ -4,3 +4,5 @@ pyaudio
 pygame
 soundfile
 python-dotenv
+torch
+TTS
