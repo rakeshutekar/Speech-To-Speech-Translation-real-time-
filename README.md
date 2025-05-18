@@ -4,7 +4,7 @@ This a Speech to Speech Translation Application which translates any-language to
 
 ## Introduction
 
-This project demonstrates a real-time speech-to-speech translation system that supports 99 languages using the [Whisper model](https://huggingface.co/openai/whisper-large-v3). The system captures audio input, translates the speech, and synthesizes the translated speech in real-time. The API-based version now includes **voice cloning** so the translated output uses the speaker's own voice.
+This project demonstrates a real-time speech-to-speech translation system that supports 99 languages using the [Whisper model](https://huggingface.co/openai/whisper-large-v3). The system captures audio input, translates the speech, and synthesizes the translated speech in real-time. The API-based version now includes **voice cloning** so the translated output uses the speaker's own voice. It also detects the speaker's **emotion** and applies that tone to the synthesized speech.
 
 If you don't have the required computing power to run the models locally, you can use the OpenAI API for speech-to-text and text-to-speech services. The project supports both configurations: using pre-trained models directly and using OpenAI API.
 
@@ -64,10 +64,8 @@ We welcome contributions from the open-source community to enhance the speech-to
     - [OpenVoiceV2](https://huggingface.co/myshell-ai/OpenVoiceV2)
     - [PSST-Fairseq-Voice-Clone](https://huggingface.co/birgermoell/psst-fairseq-voice-clone)
 
-2. **Emotion Detection**: Add emotion detection to identify the speaker's emotion. Reference model:
+2. **Emotion Detection**: The API version now detects the speaker's emotion and applies it during speech synthesis. Reference model:
     - [wav2vec2-lg-xlsr-en-speech-emotion-recognition](https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition)
-
-3. **Output Speech with Emotion**: Enhance the system to output synthesized speech with detected emotions.
 
 ## Demo
 

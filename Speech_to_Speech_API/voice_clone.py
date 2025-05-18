@@ -36,6 +36,28 @@ def load_voice_clone_model():
     return tts
 
 
-def synthesize_with_clone(tts, text, speaker_wav, language="en", file_path="speech_output.wav"):
-    """Synthesize speech using the cloned voice."""
-    tts.tts_to_file(text=text, speaker_wav=speaker_wav, language=language, file_path=file_path)
+EMOTION_PRESETS = {
+    "happy": "happy",
+    "sad": "sad",
+    "angry": "angry",
+    "surprised": "surprised",
+}
+
+
+def synthesize_with_clone(
+    tts,
+    text,
+    speaker_wav,
+    language="en",
+    emotion="neutral",
+    file_path="speech_output.wav",
+):
+    """Synthesize speech using the cloned voice with optional emotion."""
+    preset = EMOTION_PRESETS.get(emotion.lower(), "neutral")
+    tts.tts_to_file(
+        text=text,
+        speaker_wav=speaker_wav,
+        language=language,
+        emotion=preset,
+        file_path=file_path,
+    )
