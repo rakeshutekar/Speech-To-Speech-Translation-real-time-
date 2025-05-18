@@ -5,6 +5,7 @@ import openai
 import soundfile as sf
 from dotenv import load_dotenv
 from utils import audio_queue, calculate_rms, play_audio
+from audio_capture import RATE
 
 load_dotenv()
 
