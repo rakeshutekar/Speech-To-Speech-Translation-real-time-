@@ -6,6 +6,10 @@ import soundfile as sf
 from dotenv import load_dotenv
 from utils import audio_queue, calculate_rms, play_audio
 from audio_capture import RATE
+from voice_clone import load_voice_clone_model, synthesize_with_clone
+
+speaker_sample = os.getenv("SPEAKER_WAV", "speaker.wav")
+tts_model = load_voice_clone_model()
 
 load_dotenv()
 
@@ -33,18 +37,11 @@ def translate_and_synthesize():
             translated_text = translation.text
             print("Translated Text:", translated_text)
 
-            speech_file_path = "speech_output.mp3"
+            speech_file_path = "speech_output.wav"
             prev_mod_time = os.path.getmtime(speech_file_path) if os.path.exists(speech_file_path) else 0
 
             try:
-                response = openai.audio.speech.create(
-                    model="tts-1",
-                    input=translated_text,
-                    voice="alloy",
-                    
-                )
-                with open(speech_file_path, "wb") as f:
-                    f.write(response.content)
+                synthesize_with_clone(tts_model, translated_text, speaker_sample, file_path=speech_file_path)
 
                 new_mod_time = os.path.getmtime(speech_file_path)
                 if new_mod_time > prev_mod_time:
