@@ -3,5 +3,5 @@ numpy
 pyaudio
 pygame
 soundfile
-torch
+torch==2.5.*
 transformers
