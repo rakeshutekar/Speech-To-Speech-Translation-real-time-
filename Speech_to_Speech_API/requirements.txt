@@ -6,3 +6,5 @@ soundfile
 python-dotenv
 torch==2.5.*
 TTS
+transformers
+torchaudio

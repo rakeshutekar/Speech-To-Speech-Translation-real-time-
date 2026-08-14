@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from utils import audio_queue, calculate_rms, play_audio
 from audio_capture import RATE
 from voice_clone import load_voice_clone_model, synthesize_with_clone
+from emotion_detection import detect_emotion
 
 speaker_sample = os.getenv("SPEAKER_WAV", "speaker.wav")
 tts_model = load_voice_clone_model()
@@ -31,17 +32,26 @@ def translate_and_synthesize():
 
         with open(audio_file_path, "rb") as audio_file:
             translation = openai.audio.translations.create(
-                model="whisper-1", 
-                file=audio_file
+                model="whisper-1",
+                file=audio_file,
             )
             translated_text = translation.text
             print("Translated Text:", translated_text)
+
+            emotion = detect_emotion(audio_file_path)
+            print("Detected Emotion:", emotion)
 
             speech_file_path = "speech_output.wav"
             prev_mod_time = os.path.getmtime(speech_file_path) if os.path.exists(speech_file_path) else 0
 
             try:
-                synthesize_with_clone(tts_model, translated_text, speaker_sample, file_path=speech_file_path)
+                synthesize_with_clone(
+                    tts_model,
+                    translated_text,
+                    speaker_sample,
+                    emotion=emotion,
+                    file_path=speech_file_path,
+                )
 
                 new_mod_time = os.path.getmtime(speech_file_path)
                 if new_mod_time > prev_mod_time:
